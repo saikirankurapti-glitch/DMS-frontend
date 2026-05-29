@@ -5,19 +5,19 @@ export const API_ENDPOINTS = {
   login: '/auth/login',
   logout: '/auth/logout',
   me: '/auth/me',
-  
+
   // Users
   users: '/users',
   userById: (id: number) => `/users/${id}`,
   activateUser: (id: number) => `/users/${id}/activate`,
   deactivateUser: (id: number) => `/users/${id}/deactivate`,
   resetPassword: (id: number) => `/users/${id}/reset-password`,
-  
+
   // Audit Logs
   auditLogs: '/audit-logs',
   auditActions: '/audit-logs/actions',
   auditEntityTypes: '/audit-logs/entity-types',
-  
+
   // Templates
   templates: '/templates',
   templateById: (id: number) => `/templates/${id}`,

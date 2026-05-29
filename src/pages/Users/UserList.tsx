@@ -13,7 +13,7 @@ import {
   Eye,
   RefreshCw,
 } from 'lucide-react';
-import { formatIST } from '@/utils/dateUtils';
+import { formatISTDateTime } from '@/utils/dateUtils';
 
 const UserList: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
@@ -276,7 +276,7 @@ const UserList: React.FC = () => {
                       </td>
                       <td className="px-6 py-4 text-sm text-gray-500">
                         {user.last_login
-                          ? `${formatIST(user.last_login, 'MMM dd, yyyy HH:mm')} IST`
+                          ? `${formatISTDateTime(user.last_login)} IST`
                           : 'Never'}
                       </td>
                       <td className="px-6 py-4 text-right text-sm font-medium">

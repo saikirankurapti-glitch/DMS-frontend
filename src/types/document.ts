@@ -222,30 +222,3 @@ export interface CommentListResponse {
   comments: DocumentComment[];
   total: number;
 }
-
-
-
-  selection_end?: number;
-  text_context?: string;
-  is_resolved: boolean;
-  resolved_at?: string;
-  resolved_by_id?: number;
-  resolved_by_name?: string;
-  created_at: string;
-  updated_at: string;
-}
-
-export interface CommentCreate {
-  comment_text: string;
-  selected_text?: string;
-  selection_start?: number;
-  selection_end?: number;
-  text_context?: string;
-}
-
-export interface CommentListResponse {
-  comments: DocumentComment[];
-  total: number;
-}
-
-
