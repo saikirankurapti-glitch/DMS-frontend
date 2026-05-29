@@ -2,7 +2,7 @@
 
 Modern React + TypeScript frontend for the Pharma Document Management System.
 
-## 🚀 Quick Start
+## 🚀 Quick Start.
 
 ### Prerequisites
 
