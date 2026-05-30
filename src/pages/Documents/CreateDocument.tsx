@@ -5,6 +5,7 @@ import documentService from '../../services/document.service';
 import versionService from '../../services/version.service';
 import templateService, { Template, TemplateUsageResponse } from '../../services/template.service';
 import { useAuth } from '../../context/AuthContext';
+import { API_BASE_URL } from '../../config/api';
 
 interface MetadataField {
   key: string;
@@ -32,7 +33,7 @@ export default function CreateDocument() {
     try {
       setTemplatesLoading(true);
       console.log('Loading published templates...');
-      console.log('API base URL:', import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api/v1');
+      console.log('API base URL:', API_BASE_URL);
       
       const publishedTemplates = await templateService.getPublished();
       console.log('Published templates loaded:', publishedTemplates);

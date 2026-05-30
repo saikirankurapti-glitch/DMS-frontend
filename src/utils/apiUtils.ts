@@ -1,4 +1,4 @@
-import { API_BASE_URL } from '@/config/api';
+import { API_BASE_URL } from '../config/api';
 
 /**
  * Resolves the runtime API base URL used for manual fetch calls.
@@ -6,7 +6,7 @@ import { API_BASE_URL } from '@/config/api';
  */
 export const resolveApiBaseUrl = (): string => {
   const envApiUrl = (import.meta as any)?.env?.VITE_API_URL as string | undefined;
-  const base = envApiUrl || API_BASE_URL || 'http://localhost:8000/api/v1';
+  const base = envApiUrl || API_BASE_URL || 'https://dms-backend-b4fddtefc6evbcfu.southeastasia-01.azurewebsites.net/api/v1';
   return base.replace(/\/$/, '');
 };
 
