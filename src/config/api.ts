@@ -1,5 +1,17 @@
-export const API_BASE_URL =
-  'https://dms-backend-b4fddtefc6evbcfu.southeastasia-01.azurewebsites.net/api/v1';
+const getApiBaseUrl = (): string => {
+  // 1. Check environment variable override (e.g. from .env file or hosting env)
+  if (import.meta.env.VITE_API_URL) {
+    return import.meta.env.VITE_API_URL;
+  }
+  // 2. If in local development, use Vite's proxy path
+  if (import.meta.env.DEV) {
+    return '/api/v1';
+  }
+  // 3. Fallback for production Azure Static Web Apps deployment
+  return 'https://dms-backend-b4fddtefc6evbcfu.southeastasia-01.azurewebsites.net/api/v1';
+};
+
+export const API_BASE_URL = getApiBaseUrl();
 
 export const API_ENDPOINTS = {
   // Auth

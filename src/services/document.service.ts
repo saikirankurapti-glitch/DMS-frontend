@@ -27,7 +27,7 @@ const documentService = {
    * Create a new document (metadata only)
    */
   async create(data: CreateDocumentRequest): Promise<Document> {
-    const response = await api.post<Document>('/documents/', data);
+    const response = await api.post<Document>('/documents', data);
     return response.data;
   },
 
@@ -35,7 +35,7 @@ const documentService = {
    * Get paginated list of documents
    */
   async list(params?: DocumentSearchParams): Promise<DocumentListResponse> {
-    const response = await api.get<DocumentListResponse>('/documents/', { params });
+    const response = await api.get<DocumentListResponse>('/documents', { params });
     return response.data;
   },
 
